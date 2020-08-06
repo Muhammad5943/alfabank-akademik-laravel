@@ -14,8 +14,11 @@ class AddForeignKeyToPendaftarans extends Migration
     public function up()
     {
         Schema::table('pendaftarans', function (Blueprint $table) {
-            $table->foreignId('id_user')->after('id')->constrained('users');
-            $table->foreignId('id_program_kursus')->after('id_user')->constrained('program_kursuses');
+            // $table->foreignId('id_user')->after('id')->constrained('users')->onDelate('cascade');
+            // $table->foreignId('id_program_kursus')->after('id_user')->constrained('program_kursuses')->onDelate('cascade');
+
+            $table->foreign('id_user')->references('id')->on('users')->onDelate('cascade');
+            $table->foreign('id_program_kursus')->references('id')->on('program_kursuses')->onDelate('cascade');
         });
     }
 

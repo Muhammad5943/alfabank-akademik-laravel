@@ -27,13 +27,13 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($user_masa_studi as $index=>$data)
-               <tr>
+            @foreach ($user_masa_studi as $index => $data)
+            <tr>
                 <th>{{ $user_masa_studi->firstItem() + $index }}</th>
-                <td>{{ $data->user->nama}}</td>
-                <td>{{ $data->user->email}}</td>
-                <td>{{ $data->program_kursus->nama}}</td>
-                <td>{{ $data->status}}</td>
+                <td>{{ $data->user->nama }}</td>
+                <td>{{ $data->user->email }}</td>
+                <td>{{ $data->program_kursus->nama }}</td>
+                <td>{{ $data->status }}</td>
                 <td>
                     <form action="{{ route('admin.lulus-sertifikasi',$data->id) }}" method="post">
                         @csrf

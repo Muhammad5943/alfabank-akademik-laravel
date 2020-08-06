@@ -20,6 +20,7 @@ class SertifikatController extends Controller
         // dd($user_masa_studi);
         return view('admin-panel.sertifikasi', compact('user_masa_studi'));
     }
+    
     public function lulusSertifikasi(Pendaftaran $pendaftaran, Sertifikat $sertifikat)
     {
         $pendaftaran->status = "lulus";

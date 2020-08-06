@@ -75,6 +75,7 @@ class ProgramKursusController extends Controller
     {
         $programKursus->update($request->all());
         session()->flash('success','berhasil mengupdate program kursus');
+        // dd($programKursus);
         return redirect()->route('admin.program-kursus');
     }
 

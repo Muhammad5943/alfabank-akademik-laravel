@@ -10,7 +10,10 @@
             @method('patch')
             
             <div class="form-group">
-            <input type="text" name="nama" value="{{ $programKursus->nama }}" placeholder="nama" id="" class="form-control">
+                <input type="text" name="nama" value="{{ $programKursus->nama }}" placeholder="nama" id="" class="form-control">
+                @error('nama')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
@@ -23,10 +26,16 @@
 
             <div class="form-group">
                 <input type="number" name="harga" placeholder="price" value="{{ $programKursus->harga}}" id="" class="form-control">
+                @error('harga')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
                 <input type="number" name="kuota" placeholder="quota" value="{{ $programKursus->kuota}}" id="" class="form-control">
+                @error('kuota')
+                    <div class="text-danger">Kuota perlu ditambahkan</div>
+                @enderror
             </div>
 
             <input type="submit" value="update" class="btn mb-2 btn-block btn-info">

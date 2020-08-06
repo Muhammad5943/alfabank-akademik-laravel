@@ -3,10 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ProgramKursus extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = ['nama', 'masa_studi', 'harga', 'kuota'];
+
 
     public function pendaftarans()
     {
